@@ -1,0 +1,396 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2965430204831819502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 700569778582895275}
+  m_Layer: 0
+  m_Name: Cloth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &700569778582895275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2965430204831819502}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7191511286218350470}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4264164856415507856
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8522571371321041116}
+  m_Layer: 0
+  m_Name: Test
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8522571371321041116
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4264164856415507856}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4923298646633000483}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4425245702247408705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4923298646633000483}
+  m_Layer: 0
+  m_Name: Armature
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4923298646633000483
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4425245702247408705}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8522571371321041116}
+  m_Father: {fileID: 7191511286218350470}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8982312995688560552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7191511286218350470}
+  - component: {fileID: 6707809333857966193}
+  m_Layer: 0
+  m_Name: "\u8868\u60C5 \u30B5\u30F3\u30D7\u30EB"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7191511286218350470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8982312995688560552}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.0931765, y: 0.350998, z: -0.43549252}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4923298646633000483}
+  - {fileID: 700569778582895275}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6707809333857966193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8982312995688560552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f6e1368d803614f8a351322ab09bac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mesh: {fileID: 0}
+  mesh_path: Body
+  override_datas_name:
+  - vrc.v_sil
+  - vrc.v_pp
+  - vrc.v_aa
+  - vrc.v_oh
+  - vrc.v_ou
+  - vrc.v_ih
+  - vrc.v_th
+  - vrc.v_nn
+  - vrc.v_dd
+  - vrc.v_kk
+  - vrc.v_ff
+  - vrc.v_e
+  - vrc.v_ch
+  - vrc.v_rr
+  - vrc.v_ss
+  - vrc.blink
+  - "----------\u25BCMOUSE\u25BC----------"
+  - "\u3042"
+  - "\u3044"
+  - "\u3046"
+  - "\u3048"
+  - "\u304A"
+  - "\u3042\u3042"
+  - "\u304A\u304A"
+  - "\u304A\u3061\u3087\u307C\u53E3"
+  - "\u53E3\u5C0F"
+  - "\u03C9"
+  - "\u771F\u9854\u53E3"
+  - "\u3080\u3063"
+  - "\u307B\u307B\u3048\u307F\u53E3"
+  - "\u306F\u308F\u308F\u30FB\u30FB"
+  - "\u30EF"
+  - "\u30EF\u30EF"
+  - "\u30EF\u30EF\uFF08\u516B\u91CD\u6B6F\uFF09"
+  - "\u30EF\u30EF\uFF08\u30AE\u30B6\u6B6F\uFF09"
+  - "\u25B3"
+  - "\u306F\u3089\u307A\u3053"
+  - "\u3079\u30FC"
+  - "\u306B\u3084\u308A"
+  - "\u307E\u308B\u53E3"
+  - "\u307E\u308B\u53E3\uFF08\u516B\u91CD\u6B6F\uFF09"
+  - "----------\u25BCEYEBROW\u25BC----------"
+  - "\u4E0A"
+  - "\u4E0B"
+  - "\u771F\u9762\u76EE"
+  - "\u56F0\u308B"
+  - "\u306B\u3053\u308A"
+  - "\u56F0\u60D1"
+  - "\u53F3\u56F0\u60D1"
+  - "----------\u25BCEYE\u25BC----------"
+  - "\u307E\u3070\u305F\u304D"
+  - "\u7B11\u3044"
+  - "\u306A\u3054\u307F"
+  - "\u30A6\u30A4\u30F3\u30AF"
+  - "\u30A6\u30A4\u30F3\u30AF\u53F3"
+  - "\u30A6\u30A4\u30F3\u30AF\uFF12"
+  - "\u30A6\u30A4\u30F3\u30AF\uFF12\u53F3"
+  - "\u4E0A\u3092\u898B\u308B"
+  - "\u4E0B\u3092\u898B\u308B"
+  - "\u53F3\u3092\u898B\u308B"
+  - "\u5DE6\u3092\u898B\u308B"
+  - "\u30CF\u30A4\u30E9\u30A4\u30C8\u7121"
+  - "\u77B3\u5C0F"
+  - "\u76EE\u306E\u5E45\u5909\u66F4\u5927"
+  - "\u76EE\u306E\u5E45\u5909\u66F4\u5C0F"
+  - "\u30B8\u30C8\u76EE"
+  - "\u30AF\u30FC\u30EB\u76EE"
+  - "\u76EE\u3064\u304D\u5909\u66F4\uFF08\u30AD\u30EA\u30C3\uFF09"
+  - "\u76EE\u3064\u304D\u5909\u66F4\uFF08\u30BF\u30EC\uFF09"
+  - "\u3057\u3044\u305F\u3051\u76EE"
+  - "\u3050\u308B\u3050\u308B\uFF11"
+  - "\u3050\u308B\u3050\u308B\uFF12"
+  - "\u30CF\u30FC\u30C8\u76EE"
+  - "\u306F\u3045"
+  - "----------\u25BCEXTRA\u25BC----------"
+  - "\u8033\u6D88\u3057"
+  - "\u30D4\u30F3\u30AF\u307B\u3063\u307A"
+  - "\u982C\u67D3\u3081"
+  - "\u7D05\u6F6E"
+  - "\u304C\u30FC\u3093"
+  - "\u9752\u3056\u3081"
+  - "\u6C57"
+  - "\u6D99"
+  - "\u3075\u304F\u308C\u9854"
+  override_datas_weight:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 100
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  override_datas_maxweight:
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  override_datas_isoverride: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000
