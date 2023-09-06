@@ -4,7 +4,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-namespace Saturnian_NewKiseteneEx
+namespace Saturnian_NewKiseteneEx_Package
 {
     public class Kisetene_localize
     {
@@ -53,7 +53,7 @@ namespace Saturnian_NewKiseteneEx
         /// <summary>
         /// 言語ファイル
         /// </summary>
-        public static string LocalizePath = "Assets/さたにあしょっぴんぐ/New 「キセテネ」改良版/Localize/";
+        public static string LocalizePath = "Packages/com.satania.kiseteneex/Runtime/New 「キセテネ」改良版/Localize/";
 
         /// <summary>
         /// 言語ファイル読み込み用

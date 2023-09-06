@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace Saturnian_NewKiseteneEx
+namespace Saturnian_NewKiseteneEx_Package
 {
     /// <summary>
     /// GameObjectの拡張クラス

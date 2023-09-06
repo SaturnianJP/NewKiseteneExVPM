@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-namespace Saturnian_NewKiseteneEx
+namespace Saturnian_NewKiseteneEx_Package
 {
     public partial class NewKiseteneEx
     {

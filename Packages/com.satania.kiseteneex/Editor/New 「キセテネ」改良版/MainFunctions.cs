@@ -1,6 +1,6 @@
 ﻿
 using sataniashoping;
-using sataniashoping.component.kisetenecomponent;
+using sataniashoping.component.kisetenecomponent_package;
 //using Saturnian_flyavatarsetup;
 using System;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ using UnityEngine.Animations;
 
 using VRC.SDK3.Dynamics.PhysBone.Components;
 
-namespace Saturnian_NewKiseteneEx
+namespace Saturnian_NewKiseteneEx_Package
 {
     public partial class NewKiseteneEx
     {

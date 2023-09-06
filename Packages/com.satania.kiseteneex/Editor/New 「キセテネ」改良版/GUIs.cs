@@ -6,7 +6,7 @@ using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
 
-namespace Saturnian_NewKiseteneEx
+namespace Saturnian_NewKiseteneEx_Package
 {
     public partial class NewKiseteneEx
     {

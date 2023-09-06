@@ -2,7 +2,7 @@
 using UnityEngine;
 using VRC.SDKBase;
 
-namespace sataniashoping.component.kisetenecomponent
+namespace sataniashoping.component.kisetenecomponent_package
 {
     //Editモードでも実行
     [ExecuteAlways]
@@ -10,7 +10,7 @@ namespace sataniashoping.component.kisetenecomponent
     //複数個つくのを無効化
     [DisallowMultipleComponent]
 
-    [AddComponentMenu("さたにあしょっぴんぐ/Kisetene Component")]
+    [AddComponentMenu("さたにあしょっぴんぐ/Kisetene Component-pkg")]
     public class KiseteneComponent : MonoBehaviour, IEditorOnly
     {
         public string hash;

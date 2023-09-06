@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace Saturnian_NewKiseteneEx
+namespace Saturnian_NewKiseteneEx_Package
 {
     public partial class NewKiseteneEx : EditorWindow
     {
@@ -114,7 +114,7 @@ namespace Saturnian_NewKiseteneEx
         /// </summary>
         public static string EditorTitle = "New 「キセテネ」改良版";
 
-        [MenuItem("さたにあしょっぴんぐ/New Kisetene Ex %#T", priority = 12)]
+        [MenuItem("さたにあしょっぴんぐ/New Kisetene Ex(パッケージ版) %#T", priority = 12)]
         private static void Init()
         {
             //ウィンドウのインスタンスを生成
