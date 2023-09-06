@@ -994,8 +994,9 @@ Upper_Leg_L
 upper_leg_l
 upper_leg_L
 LeftUpLeg
+upper_leg.L
             */
-            { HumanBodyBones.LeftUpperLeg, "(?:upper(?:_(?:leg(?:_[Ll]|.l)|Leg(?:.l|_L))| (?:leg.[Ll]|Leg.l))|Upper(?:(?:_(?:Leg[._]|leg.)|Leg[._])L| Leg.[Ll])|Left(?:(?:Up(?:per)?|_Up)L| (?:Upper L|l))eg|bone_upleg_L)" },
+            { HumanBodyBones.LeftUpperLeg, "(?:upper(?:_(?:leg(?:.[Ll]|_[Ll])|Leg(?:.l|_L))| (?:leg.[Ll]|Leg.l))|Upper(?:(?:_(?:Leg[._]|leg.)|Leg[._])L| Leg.[Ll])|Left(?:(?:Up(?:per)?|_Up)L| (?:Upper L|l))eg|bone_upleg_L)" },
 
 
             /*
@@ -1100,8 +1101,9 @@ Upper_Leg_R
 upper_leg_r
 upper_leg_R
 RightUpLeg
+upper_leg.R
             */
-            { HumanBodyBones.RightUpperLeg, "(?:upper(?:_(?:leg(?:_[Rr]|.r)|Leg(?:.r|_R))| (?:leg.[Rr]|Leg.r)|leg.[Rr])|Upper(?:(?:_(?:Leg[._]|leg.)|Leg[._])R| Leg.[Rr])|Right(?:(?:Up(?:per)?|_Up)L| (?:Upper L|l))eg|bone_upleg_R)" },
+            { HumanBodyBones.RightUpperLeg, "(?:upper(?:_(?:leg(?:.[Rr]|_[Rr])|Leg(?:.r|_R))| (?:leg.[Rr]|Leg.r)|leg.[Rr])|Upper(?:(?:_(?:Leg[._]|leg.)|Leg[._])R| Leg.[Rr])|Right(?:(?:Up(?:per)?|_Up)L| (?:Upper L|l))eg|bone_upleg_R)" },
 
 
             /*

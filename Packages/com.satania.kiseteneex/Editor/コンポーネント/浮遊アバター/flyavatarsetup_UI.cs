@@ -35,7 +35,6 @@ namespace Saturnian_flyavatarsetup
         public override void OnInspectorGUI()
         {
             GUILayout.Label("浮遊アバターセットアップはVRCのアップデートにより使えなくなっちゃいました。\n新しい方法が見つかるまでは使えないです。");
-
             //// targetを変換して対象スクリプトの参照を取得する
             //FlyAvatarSetupTool flyavatar_target = target as FlyAvatarSetupTool;
 

@@ -103,8 +103,7 @@ namespace Saturnian_flyavatarsetup
 
         public void changeArmatureHeight(Transform root, float height)
         {
-            Debug.Log("浮遊アバターセットアップはVRCのアップデートにより使えなくなっちゃいました。\n新しい方法が見つかるまでは使えないです。");
-            return;
+            Debug.LogError("浮遊アバターセットアップはVRCのアップデートにより使えなくなっちゃいました。\n新しい方法が見つかるまでは使えないです。");
 
 //            VRCAvatarDescriptor avatar_descriptor = root.GetComponent<VRCAvatarDescriptor>();
 //            if (avatar_descriptor == null)

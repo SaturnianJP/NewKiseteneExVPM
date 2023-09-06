@@ -8,7 +8,7 @@ namespace Saturnian_NewKiseteneEx
     public partial class NewKiseteneEx : EditorWindow
     {
 
-        public static string version = "v2.3.3";
+        public static string version = "v2.3.4(VPM)";
 
         /// <summary>
         /// 着せたい服

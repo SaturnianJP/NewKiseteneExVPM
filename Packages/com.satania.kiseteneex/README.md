@@ -1,1 +1,1 @@
-# com.satania.kiseteneex by happy
+# com.satania.kiseteneex by user

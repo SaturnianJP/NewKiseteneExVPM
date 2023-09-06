@@ -48,7 +48,6 @@ namespace Saturnian_FlyAvatarEditor
         private void ShowGUI()
         {
             GUILayout.Label("浮遊アバターセットアップはVRCのアップデートにより使えなくなっちゃいました。\n新しい方法が見つかるまでは使えないです。");
-
             //Avatar = EditorGUILayout.ObjectField("アバター", Avatar, typeof(VRCAvatarDescriptor), true) as VRCAvatarDescriptor;
 
             //EditorGUI.BeginChangeCheck();
