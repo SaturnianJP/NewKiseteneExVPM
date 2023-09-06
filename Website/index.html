@@ -15,7 +15,7 @@
         <div class="bannerImage" style="background-image: url({{ listingInfo.BannerImageUrl }})"></div>
       {{~ end; ~}}
       <h1>
-        {{~ listingIn   fo.Name ~}}
+        {{~ listingInfo.Name ~}}
       </h1>
       {{~ if listingInfo.Description; ~}}
         <div class="caption1 mb-2">{{ listingInfo.Description }}</div>
@@ -35,7 +35,7 @@
       </div>
     </div>
     <div class="addToVccBlock mt-4 row align-items-center">
-      <fluent-text-field aria-readonly="true" id="vccUrlField" class="vccUrlField" readonly value="{{ vcc://vpm/addRepo?url=https://SaturnianJP.github.io/NewKiseteneExVPM/index.json }}">
+      <fluent-text-field aria-readonly="true" id="vccUrlField" class="vccUrlField" readonly value="{{ listingInfo.Url }}">
       </fluent-text-field>
       <fluent-button appearance="accent" class="ms-2" id="vccAddRepoButton" >Add to VCC</fluent-button>
       <fluent-button class="ms-2" id="vccUrlFieldCopy">
