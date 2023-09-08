@@ -1,4 +1,4 @@
-﻿
+﻿#if UNITY_EDITOR
 using System.Text.RegularExpressions;
 
 using UnityEngine;
@@ -717,3 +717,4 @@ namespace Saturnian_NewKiseteneEx_Package
     }
 }
 
+#endif

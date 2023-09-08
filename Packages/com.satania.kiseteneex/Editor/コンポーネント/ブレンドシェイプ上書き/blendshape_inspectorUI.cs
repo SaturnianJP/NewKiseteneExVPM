@@ -1,9 +1,9 @@
-﻿
+﻿#if UNITY_EDITOR
 using System.Linq;
 using System.Text;
-#if UNITY_EDITOR
+
 using UnityEditor;
-#endif
+
 using UnityEngine;
 using static VRC.Dynamics.CollisionScene;
 
@@ -89,3 +89,4 @@ public class blendshape_inspectorUI : Editor
         }
     }
 }
+#endif

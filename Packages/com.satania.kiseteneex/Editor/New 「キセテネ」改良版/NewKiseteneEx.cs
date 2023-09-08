@@ -1,4 +1,4 @@
-﻿
+﻿#if UNITY_EDITOR
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -8,7 +8,7 @@ namespace Saturnian_NewKiseteneEx_Package
     public partial class NewKiseteneEx : EditorWindow
     {
 
-        public static string version = "v2.3.4(VPM)";
+        public static string version = "v2.3.5(VPM)";
 
         /// <summary>
         /// 着せたい服
@@ -207,3 +207,4 @@ namespace Saturnian_NewKiseteneEx_Package
     }
 }
 
+#endif

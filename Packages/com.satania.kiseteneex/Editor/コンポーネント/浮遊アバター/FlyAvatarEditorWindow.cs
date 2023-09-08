@@ -1,10 +1,10 @@
-﻿using Saturnian_flyavatarsetup;
+﻿#if UNITY_EDITOR
+using Saturnian_flyavatarsetup;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-#if UNITY_EDITOR
+
 using UnityEditor;
-#endif
 using UnityEngine;
 using VRC.SDK3.Avatars.Components;
 
@@ -170,3 +170,4 @@ namespace Saturnian_FlyAvatarEditor
         }
     }
 }
+#endif

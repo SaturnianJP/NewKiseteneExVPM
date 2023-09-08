@@ -1,4 +1,4 @@
-﻿
+﻿#if UNITY_EDITOR
 using sataniashoping;
 using sataniashoping.component.kisetenecomponent_package;
 //using Saturnian_flyavatarsetup;
@@ -759,3 +759,4 @@ namespace Saturnian_NewKiseteneEx_Package
     }
 }
 
+#endif

@@ -1,4 +1,4 @@
-﻿
+﻿#if UNITY_EDITOR
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -1183,4 +1183,4 @@ RightToeBase
         string ChMd_momo_Hip_Regex = "Root/Uper_Root/Hip";
     }
 }
-
+#endif

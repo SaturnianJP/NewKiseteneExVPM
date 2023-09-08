@@ -1,4 +1,6 @@
-﻿/*!
+﻿#if UNITY_EDITOR
+
+/*!
  * MergeUtility.cs
  *
  * Copyright (c) 2023 さたにあしょっぴんぐ
@@ -452,3 +454,4 @@ namespace satania.fxmergetool
         }
     }
 }
+#endif
