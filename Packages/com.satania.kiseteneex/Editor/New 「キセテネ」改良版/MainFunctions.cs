@@ -498,10 +498,7 @@ namespace Saturnian_NewKiseteneEx_Package
                 //胸のボーン用
                 if (i == (int)HumanBodyBones.Chest || i == (int)HumanBodyBones.UpperChest)
                 {
-                    if (BreastBoneSwap == 1)        //胸をParent Constraintでくっつける場合
-                        SetBreastParentConstraint(p);
-                    else if (BreastBoneSwap == 0)   //胸をIgnore Transformで追従する場合
-                        SetBreastIgnoreTransform(p);
+                    SetBreastIgnoreTransform(p);
                 }
 
                 //肺のボーン用 MOMO用

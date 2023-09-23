@@ -8,7 +8,7 @@ namespace Saturnian_NewKiseteneEx_Package
     public partial class NewKiseteneEx : EditorWindow
     {
 
-        public static string version = "v2.3.5(VPM)";
+        public static string version = "v2.3.6(VPM)";
 
         /// <summary>
         /// 着せたい服
@@ -88,11 +88,6 @@ namespace Saturnian_NewKiseteneEx_Package
         /// 胸のボーンを揺れるように
         /// </summary>
         //bool BreastBoneToggle = true;
-
-        /// <summary>
-        /// 胸のボーンを揺れるように
-        /// </summary>
-        int BreastBoneSwap = 0;
 
         /// <summary>
         /// 自動で揺れるお尻にセット

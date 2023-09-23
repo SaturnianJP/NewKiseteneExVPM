@@ -594,10 +594,6 @@ namespace Saturnian_NewKiseteneEx_Package
 
             drawSizeLabel("胸のボーン追従", 13);
 
-            var radioStyle = new GUIStyle(EditorStyles.radioButton);
-            radioStyle.richText = true;
-            BreastBoneSwap = GUILayout.SelectionGrid(BreastBoneSwap, new string[] { $"<color=#ff0000ff><b>[Beta]</b></color>Ignore Transforms (Quest対応)", "Parent Constraint (Quest非対応)", "追従しない"}, 1, radioStyle);
-
             //BreastBoneToggle = EditorGUILayout.ToggleLeft(Localized.breastbone_parent, BreastBoneToggle);
             //drawSizeLabel(Localized.breastbone_parent_info, 10);
 

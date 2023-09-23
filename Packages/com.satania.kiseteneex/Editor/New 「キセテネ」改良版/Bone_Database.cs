@@ -832,13 +832,17 @@ bone_breast03_L
         string Breast_Regex = "(?:B(?:reast(?:_(?:R(?:oot(?:.[LR]|_[LR])|.001)?|root(?:.[LR]|_[LR])|1(?:.[LR]|_[LR])|2(?:.[LR]|_[LR])|L(?:.001)?)|.[LR])|u(?:stDynamicBone.[LR].001|tt_[LR]))|b(?:o(?:ob(?:_w.001_(?:L.00[123]|R.00[123])|s.[LR])|ne_breast0(?:1_[LR]|3_[LR]))|reast(?:_(?:L(?:.001)?|R(?:.001)?|[lr].001)|.[LR])|ust.001.[LR])|Right(?: Breast(?:2(?:_end)?|1)|_Bust(?:End|2)?|Breast_0[12])|Left(?: Breast(?:2(?:_end)?|1)|_Bust(?:End|2)?|Breast_0[12]))";
 /*      
 Hips_L
+Hips.L
+Butt_L
 */
-        public static string Hips_L_Regex = "Hips_L|Hips.L";
+        public static string Hips_L_Regex = "(?:Hips[._]|Butt_)L";
 
 /*      
 Hips_R
+Hips.R
+Butt_R
 */
-        public static string Hips_R_Regex = "Hips_R|Hips.R";
+        public static string Hips_R_Regex = "(?:Hips[._]|Butt_)R";
 
         /*
 hai.L
