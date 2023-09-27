@@ -53,13 +53,10 @@ namespace Saturnian_NewKiseteneEx_Package
 
         private void puton()
         {
-            if (m_cloth == null)
+            if (m_cloth == null || m_cloth == m_Avatar.gameObject)
                 return;
 
             if (m_Avatar == null)
-                return;
-
-            if (m_cloth == m_Avatar.gameObject)
                 return;
 
             if (!m_Avatar.isHuman)
@@ -338,6 +335,38 @@ namespace Saturnian_NewKiseteneEx_Package
                 DestroyImmediate(_Object);
         }
 
+        private VRCPhysBone GetBreastPhysboneFromRoot(Transform breast)
+        {
+            VRCPhysBone ret = null;
+            Transform root = breast.root;
+            var physbones = root.GetComponentsInChildren<VRCPhysBone>();
+
+            for (int i = 0; i < physbones.Length; i++)
+            {
+                if (physbones[i].rootTransform == breast)
+                {
+                    ret = physbones[i];
+                    Debug.Log(ret);
+                    return ret;
+                }
+            }
+
+            return ret;
+        }
+
+        private void ClothBreastPhysboneDelete(Transform cloth_breast)
+        {
+            VRCPhysBone cloth_breast_physbone = cloth_breast.GetComponent<VRCPhysBone>();
+            if (cloth_breast_physbone)
+                _DestroyObject(cloth_breast_physbone);
+            else
+            {
+                cloth_breast_physbone = GetBreastPhysboneFromRoot(cloth_breast);
+                if (cloth_breast_physbone)
+                    _DestroyObject(cloth_breast_physbone);
+            }
+        }
+
         void SetAll_Breast_Parent(Transform cloth_breast, Transform avatar_breast, ref VRCPhysBone physbone)
         {
             //中身が無い場合はスキップ
@@ -354,6 +383,13 @@ namespace Saturnian_NewKiseteneEx_Package
             //PhysBoneを取得
             var avatar_physbone = avatar_breast.GetComponent<VRCPhysBone>();
 
+            if (avatar_physbone == null && physbone == null)
+            {
+                avatar_physbone = physbone = GetBreastPhysboneFromRoot(avatar_breast);
+            }
+
+            ClothBreastPhysboneDelete(cloth_breast);
+
             //Physboneがある場合Ignoreボーンに追加
             if (avatar_physbone != null)
             {
@@ -368,10 +404,6 @@ namespace Saturnian_NewKiseteneEx_Package
             else if (physbone != null)
             {
                 physbone.ignoreTransforms.Add(cloth_breast.transform);
-
-                VRCPhysBone cloth_breast_physbone = cloth_breast.GetComponent<VRCPhysBone>();
-                if (cloth_breast_physbone)
-                    _DestroyObject(cloth_breast_physbone);
             }
 
             //Debug.Log($"cloth_breast = {cloth_breast.name}\navatar_breast = {avatar_breast.name}");
