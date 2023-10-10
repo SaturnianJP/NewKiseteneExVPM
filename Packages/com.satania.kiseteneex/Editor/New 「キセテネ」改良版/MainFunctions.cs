@@ -68,6 +68,9 @@ namespace Saturnian_NewKiseteneEx_Package
             if (BoneRenameToggle)
                 bone_renamer(m_cloth.transform, BoneRenameWord);
 
+            if (m_cloth.transform.root == m_Avatar.transform.root)
+                m_cloth.transform.SetParent(null);
+
             //アバターを複製
             Animator m_AvatarInstance = Instantiate(m_Avatar);
 

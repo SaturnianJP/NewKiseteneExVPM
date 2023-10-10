@@ -1,7 +1,7 @@
 {
   "name": "com.satania.kiseteneex",
   "displayName": "New Kisetene Ex",
-  "version": "2.3.7",
+  "version": "2.3.8",
   "description": "kisetene edited",
   "gitDependencies": {},
   "vpmDependencies": {
@@ -16,5 +16,8 @@
   "legacyFiles": {},
   "localPath": "E:\\unityhub2\\anomaea\\Packages\\com.satania.kiseteneex",
   "type": "tool",
-  "unity": "2019.4"
+  "unity": "2019.4",
+  "dependencies": {
+    "com.vrchat.avatars": "3.3.0"
+  }
 }
