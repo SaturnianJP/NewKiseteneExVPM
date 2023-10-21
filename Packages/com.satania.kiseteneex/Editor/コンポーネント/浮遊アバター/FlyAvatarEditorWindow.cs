@@ -1,7 +1,7 @@
 ﻿
 #if UNITY_EDITOR
 using UnityEditor;
-#endif
+
 using UnityEngine;
 using VRC.SDK3.Avatars.Components;
 
@@ -166,3 +166,5 @@ namespace Saturnian_FlyAvatarEditor
         }
     }
 }
+
+#endif

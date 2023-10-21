@@ -2,7 +2,7 @@
 #if UNITY_EDITOR
 
 using UnityEditor;
-#endif
+
 using UnityEngine;
 using VRC.SDK3.Avatars.Components;
 using VRC.SDKBase;
@@ -137,3 +137,4 @@ namespace Saturnian_flyavatarsetup
 }
 
 
+#endif
