@@ -611,8 +611,8 @@ namespace Saturnian_NewKiseteneEx_Package
 
             GUILayout.Space(15);
 
-            //isAutoFlying = EditorGUILayout.ToggleLeft("自動で浮遊アバターセットアップをする", isAutoFlying);
-            //drawSizeLabel("[Fly Avatar Setup Tool]コンポーネントが服に着いている場合、自動でアバターを浮かせます。", 10);
+            isAutoFlying = EditorGUILayout.ToggleLeft("自動で浮遊アバターセットアップをする", isAutoFlying);
+            drawSizeLabel("[Fly Avatar Setup Tool]コンポーネントが服に着いている場合、自動でアバターを浮かせます。", 10);
 
             GUILayout.Space(15);
         }

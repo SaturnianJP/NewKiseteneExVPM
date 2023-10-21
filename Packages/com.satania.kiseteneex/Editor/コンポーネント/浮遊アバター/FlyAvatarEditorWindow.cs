@@ -1,10 +1,7 @@
-﻿#if UNITY_EDITOR
-using Saturnian_flyavatarsetup;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-
+﻿
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using VRC.SDK3.Avatars.Components;
 
@@ -47,23 +44,22 @@ namespace Saturnian_FlyAvatarEditor
 
         private void ShowGUI()
         {
-            GUILayout.Label("浮遊アバターセットアップはVRCのアップデートにより使えなくなっちゃいました。\n新しい方法が見つかるまでは使えないです。");
-            //Avatar = EditorGUILayout.ObjectField("アバター", Avatar, typeof(VRCAvatarDescriptor), true) as VRCAvatarDescriptor;
+            Avatar = EditorGUILayout.ObjectField("アバター", Avatar, typeof(VRCAvatarDescriptor), true) as VRCAvatarDescriptor;
 
-            //EditorGUI.BeginChangeCheck();
-            //Height = EditorGUILayout.FloatField("浮かせる高さ", Height);
+            EditorGUI.BeginChangeCheck();
+            Height = EditorGUILayout.FloatField("浮かせる高さ", Height);
 
-            //isLoop = EditorGUILayout.Toggle("自動で反映", isLoop);
+            isLoop = EditorGUILayout.Toggle("自動で反映", isLoop);
 
-            //if (EditorGUI.EndChangeCheck() && isLoop)
-            //{
-            //    changeArmatureHeight(Avatar.transform, Height);
-            //}
+            if (EditorGUI.EndChangeCheck() && isLoop)
+            {
+                changeArmatureHeight(Avatar.transform, Height);
+            }
 
-            //if (GUILayout.Button("実行"))
-            //{
-            //    changeArmatureHeight(Avatar.transform, Height);
-            //}
+            if (GUILayout.Button("実行"))
+            {
+                changeArmatureHeight(Avatar.transform, Height);
+            }
         }
 
         /// <summary>
@@ -170,4 +166,3 @@ namespace Saturnian_FlyAvatarEditor
         }
     }
 }
-#endif

@@ -1,10 +1,8 @@
-﻿#if UNITY_EDITOR
-using System.Linq;
-using System.Text;
-
+﻿
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
-using VRC.SDK3.Avatars.Components;
 
 
 namespace Saturnian_flyavatarsetup
@@ -33,40 +31,38 @@ namespace Saturnian_flyavatarsetup
 
         public override void OnInspectorGUI()
         {
-            GUILayout.Label("浮遊アバターセットアップはVRCのアップデートにより使えなくなっちゃいました。\n新しい方法が見つかるまでは使えないです。");
-            //// targetを変換して対象スクリプトの参照を取得する
-            //FlyAvatarSetupTool flyavatar_target = target as FlyAvatarSetupTool;
+            // targetを変換して対象スクリプトの参照を取得する
+            FlyAvatarSetupTool flyavatar_target = target as FlyAvatarSetupTool;
 
-            //EditorGUI.BeginChangeCheck();
-            //flyavatar_target.flying_height = EditorGUILayout.FloatField("浮かせる高さ", flyavatar_target.flying_height);
+            EditorGUI.BeginChangeCheck();
+            flyavatar_target.flying_height = EditorGUILayout.FloatField("浮かせる高さ", flyavatar_target.flying_height);
 
-            //isLoop = EditorGUILayout.Toggle("自動で反映", isLoop);
+            isLoop = EditorGUILayout.Toggle("自動で反映", isLoop);
 
-            //Transform root = flyavatar_target.getRoottransform();
+            Transform root = flyavatar_target.getRoottransform();
 
-            //if (EditorGUI.EndChangeCheck() && isLoop)
-            //{
-            //    flyavatar_target.changeArmatureHeight(root, flyavatar_target.flying_height);
-            //}
+            if (EditorGUI.EndChangeCheck() && isLoop)
+            {
+                flyavatar_target.changeArmatureHeight(root, flyavatar_target.flying_height);
+            }
 
-            //if (GUILayout.Button("実行"))
-            //{
-            //    flyavatar_target.changeArmatureHeight(root, flyavatar_target.flying_height);
+            if (GUILayout.Button("実行"))
+            {
+                flyavatar_target.changeArmatureHeight(root, flyavatar_target.flying_height);
 
-            //    bool isYes = EditorUtility.DisplayDialog("Fly Avatar Setup", "コンポーネントを削除しますか？\n(VRChatにアップロードする場合は [はい] を押してください。)", "はい", "いいえ");
-            //    if (isYes)
-            //    {
-            //        if (!EditorApplication.isPlaying)
-            //            DestroyImmediate(flyavatar_target);
-            //        else
-            //            Destroy(flyavatar_target);
-            //    }
+                bool isYes = EditorUtility.DisplayDialog("Fly Avatar Setup", "コンポーネントを削除しますか？\n(VRChatにアップロードする場合は [はい] を押してください。)", "はい", "いいえ");
+                if (isYes)
+                {
+                    if (!EditorApplication.isPlaying)
+                        DestroyImmediate(flyavatar_target);
+                    else
+                        Destroy(flyavatar_target);
+                }
 
 
-            //    EditorUtility.SetDirty(root);
-            //}
+                EditorUtility.SetDirty(root);
+            }
         }
 
     }
 }
-#endif

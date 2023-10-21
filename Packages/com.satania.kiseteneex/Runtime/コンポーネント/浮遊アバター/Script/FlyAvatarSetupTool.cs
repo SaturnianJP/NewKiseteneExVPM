@@ -1,4 +1,4 @@
-﻿using sataniashoping.component;
+﻿
 #if UNITY_EDITOR
 
 using UnityEditor;
@@ -103,36 +103,34 @@ namespace Saturnian_flyavatarsetup
 
         public void changeArmatureHeight(Transform root, float height)
         {
-            Debug.LogError("浮遊アバターセットアップはVRCのアップデートにより使えなくなっちゃいました。\n新しい方法が見つかるまでは使えないです。");
+            VRCAvatarDescriptor avatar_descriptor = root.GetComponent<VRCAvatarDescriptor>();
+            if (avatar_descriptor == null)
+                return;
 
-//            VRCAvatarDescriptor avatar_descriptor = root.GetComponent<VRCAvatarDescriptor>();
-//            if (avatar_descriptor == null)
-//                return;
+#if UNITY_EDITOR
+            if (PrefabUtility.GetPrefabAssetType(root) != PrefabAssetType.NotAPrefab)
+                PrefabUtility.UnpackPrefabInstance(root.gameObject, PrefabUnpackMode.OutermostRoot, InteractionMode.AutomatedAction);
+#endif
 
-//#if UNITY_EDITOR
-//            if (PrefabUtility.GetPrefabAssetType(root) != PrefabAssetType.NotAPrefab)
-//                PrefabUtility.UnpackPrefabInstance(root.gameObject, PrefabUnpackMode.OutermostRoot, InteractionMode.AutomatedAction);
-//#endif
+            Transform armature;
+            Transform dummy_armature = GetOrCreateDummyArmature(root, out armature);
 
-//            Transform armature;
-//            Transform dummy_armature = GetOrCreateDummyArmature(root, out armature);
+            float viewposition_height = avatar_descriptor.ViewPosition.y - armature.localPosition.y;
 
-//            float viewposition_height = avatar_descriptor.ViewPosition.y - armature.localPosition.y;
+#if UNITY_EDITOR
+            Undo.RecordObject(avatar_descriptor, "[FlyAvatarSetup] Change ViewPosition");
+#endif
 
-//#if UNITY_EDITOR
-//            Undo.RecordObject(avatar_descriptor, "[FlyAvatarSetup] Change ViewPosition");
-//#endif
+            //ビューポイントを変更
+            avatar_descriptor.ViewPosition = new Vector3(avatar_descriptor.ViewPosition.x, viewposition_height + height, avatar_descriptor.ViewPosition.z);
 
-//            //ビューポイントを変更
-//            avatar_descriptor.ViewPosition = new Vector3(avatar_descriptor.ViewPosition.x, viewposition_height + height, avatar_descriptor.ViewPosition.z);
-
-//#if UNITY_EDITOR
-//            Undo.RecordObject(armature, "[FlyAvatarSetup] Chnage Armature Position");
-//#endif
-//            armature.localPosition = new Vector3(armature.localPosition.x, height, armature.localPosition.z);
-//#if UNITY_EDITOR
-//            EditorUtility.SetDirty(armature);
-//#endif
+#if UNITY_EDITOR
+            Undo.RecordObject(armature, "[FlyAvatarSetup] Chnage Armature Position");
+#endif
+            armature.localPosition = new Vector3(armature.localPosition.x, height, armature.localPosition.z);
+#if UNITY_EDITOR
+            EditorUtility.SetDirty(armature);
+#endif
 
         }
     }

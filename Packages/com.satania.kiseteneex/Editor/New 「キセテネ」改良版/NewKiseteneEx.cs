@@ -8,7 +8,7 @@ namespace Saturnian_NewKiseteneEx_Package
     public partial class NewKiseteneEx : EditorWindow
     {
 
-        public static string version = "v2.3.8(VPM)";
+        public static string version = "v2.3.9(VPM)";
 
         /// <summary>
         /// 着せたい服
@@ -102,7 +102,7 @@ namespace Saturnian_NewKiseteneEx_Package
         /// <summary>
         /// 自動で浮遊アバターセットアップ
         /// </summary>
-        //bool isAutoFlying = true;
+        bool isAutoFlying = true;
 
         /// <summary>
         /// エディタのタイトル

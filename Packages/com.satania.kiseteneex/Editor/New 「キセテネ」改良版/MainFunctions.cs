@@ -1,6 +1,7 @@
 ﻿#if UNITY_EDITOR
 using sataniashoping;
 using sataniashoping.component.kisetenecomponent_package;
+using Saturnian_flyavatarsetup;
 //using Saturnian_flyavatarsetup;
 using System;
 using System.Collections.Generic;
@@ -114,19 +115,19 @@ namespace Saturnian_NewKiseteneEx_Package
             }
 
             //浮遊アバターコンポーネントついているなら実行
-            //if (isAutoFlying)
-            //{
-            //    var flyingavatar = m_cloth.GetComponent<FlyAvatarSetupTool>();
-            //    if (flyingavatar != null)
-            //    {
-            //        flyingavatar.changeArmatureHeight(flyingavatar.getRoottransform(), flyingavatar.flying_height);
+            if (isAutoFlying)
+            {
+                var flyingavatar = m_cloth.GetComponent<FlyAvatarSetupTool>();
+                if (flyingavatar != null)
+                {
+                    flyingavatar.changeArmatureHeight(flyingavatar.getRoottransform(), flyingavatar.flying_height);
 
-            //        if (!EditorApplication.isPlaying)
-            //            DestroyImmediate(flyingavatar);
-            //        else
-            //            Destroy(flyingavatar);
-            //    }
-            //}
+                    if (!EditorApplication.isPlaying)
+                        DestroyImmediate(flyingavatar);
+                    else
+                        Destroy(flyingavatar);
+                }
+            }
 
             //複製後のオブジェクトをアクティブ化
             m_AvatarInstance.gameObject.SetActive(true);
