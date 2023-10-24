@@ -95,9 +95,7 @@ namespace Saturnian_flyavatarsetup
 
             dummy.transform.position = root.transform.position;
             dummy.transform.rotation = root.transform.rotation;
-#if UNITY_EDITOR
             EditorUtility.SetDirty(dummy);
-#endif
             return dummy;
         }
 
@@ -107,34 +105,31 @@ namespace Saturnian_flyavatarsetup
             if (avatar_descriptor == null)
                 return;
 
-#if UNITY_EDITOR
             if (PrefabUtility.GetPrefabAssetType(root) != PrefabAssetType.NotAPrefab)
                 PrefabUtility.UnpackPrefabInstance(root.gameObject, PrefabUnpackMode.OutermostRoot, InteractionMode.AutomatedAction);
-#endif
+
+            Animator avatar_animator = root.GetComponent<Animator>();
+            if (avatar_animator == null || !avatar_animator.isHuman)
+                return;
+
+            var hips_transform = avatar_animator.GetBoneTransform(HumanBodyBones.Hips);
+            float beforeHipsY = hips_transform.position.y;
 
             Transform armature;
             Transform dummy_armature = GetOrCreateDummyArmature(root, out armature);
 
-            float viewposition_height = avatar_descriptor.ViewPosition.y - armature.localPosition.y;
+            Undo.RecordObject(armature, "[FlyAvatarSetup] Chnage Armature Position");
+            armature.localPosition = new Vector3(armature.localPosition.x, height, armature.localPosition.z);
 
-#if UNITY_EDITOR
+            float height_diff = hips_transform.position.y - beforeHipsY;
+
+            //float viewposition_height = avatar_descriptor.ViewPosition.y - height_diff;
             Undo.RecordObject(avatar_descriptor, "[FlyAvatarSetup] Change ViewPosition");
-#endif
 
             //ビューポイントを変更
-            avatar_descriptor.ViewPosition = new Vector3(avatar_descriptor.ViewPosition.x, viewposition_height + height, avatar_descriptor.ViewPosition.z);
-
-#if UNITY_EDITOR
-            Undo.RecordObject(armature, "[FlyAvatarSetup] Chnage Armature Position");
-#endif
-            armature.localPosition = new Vector3(armature.localPosition.x, height, armature.localPosition.z);
-#if UNITY_EDITOR
+            avatar_descriptor.ViewPosition = new Vector3(avatar_descriptor.ViewPosition.x, avatar_descriptor.ViewPosition.y + height_diff, avatar_descriptor.ViewPosition.z);
             EditorUtility.SetDirty(armature);
-#endif
-
         }
     }
 }
-
-
 #endif

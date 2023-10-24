@@ -149,19 +149,26 @@ namespace Saturnian_FlyAvatarEditor
             if (PrefabUtility.GetPrefabAssetType(root) != PrefabAssetType.NotAPrefab)
                 PrefabUtility.UnpackPrefabInstance(root.gameObject, PrefabUnpackMode.OutermostRoot, InteractionMode.AutomatedAction);
 
+            Animator avatar_animator = root.GetComponent<Animator>();
+            if (avatar_animator == null || !avatar_animator.isHuman)
+                return;
+
+            var hips_transform = avatar_animator.GetBoneTransform(HumanBodyBones.Hips);
+            float beforeHipsY = hips_transform.position.y;
+
             Transform armature;
             Transform dummy_armature = GetOrCreateDummyArmature(root, out armature);
-
-            float viewposition_height = avatar_descriptor.ViewPosition.y - armature.localPosition.y;
-
-            Undo.RecordObject(avatar_descriptor, "[FlyAvatarSetup] Change ViewPosition");
-
-            //ビューポイントを変更
-            avatar_descriptor.ViewPosition = new Vector3(avatar_descriptor.ViewPosition.x, viewposition_height + height, avatar_descriptor.ViewPosition.z);
 
             Undo.RecordObject(armature, "[FlyAvatarSetup] Chnage Armature Position");
             armature.localPosition = new Vector3(armature.localPosition.x, height, armature.localPosition.z);
 
+            float height_diff = hips_transform.position.y - beforeHipsY;
+
+            //float viewposition_height = avatar_descriptor.ViewPosition.y - height_diff;
+            Undo.RecordObject(avatar_descriptor, "[FlyAvatarSetup] Change ViewPosition");
+
+            //ビューポイントを変更
+            avatar_descriptor.ViewPosition = new Vector3(avatar_descriptor.ViewPosition.x, avatar_descriptor.ViewPosition.y - height_diff, avatar_descriptor.ViewPosition.z);
             EditorUtility.SetDirty(armature);
         }
     }
