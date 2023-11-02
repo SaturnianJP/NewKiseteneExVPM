@@ -107,11 +107,19 @@ namespace Saturnian_NewKiseteneEx_Package
             var chest = m_bone[HumanBodyBones.UpperChest] != null ? m_bone[HumanBodyBones.UpperChest] : m_bone[HumanBodyBones.Chest];
             if (chest != null)
             {
-                //胸のボーンとってみる
-                Breast_R = FindBone_LeftRight(chest, Breast_Regex, true, RegexOptions.None);
+                Lzebul.GetBreastBone(chest);
 
-                //胸のボーンとってみる
-                Breast_L = FindBone_LeftRight(chest, Breast_Regex, false, RegexOptions.None);
+                if (Breast_R == null)
+                {
+                    //胸のボーンとってみる
+                    Breast_R = FindBone_LeftRight(chest, Breast_Regex, true, RegexOptions.None);
+                }
+
+                if (Breast_L == null)
+                {
+                    //胸のボーンとってみる
+                    Breast_L = FindBone_LeftRight(chest, Breast_Regex, false, RegexOptions.None);
+                }
 
                 //肺のボーンもとってみる
                 Lung_L = FindBone_LeftRight(chest, Lung_Regex, false);
@@ -148,6 +156,9 @@ namespace Saturnian_NewKiseteneEx_Package
             m_bone[HumanBodyBones.RightUpperArm] = FindBone(m_bone[HumanBodyBones.RightShoulder], m_boneRegex[HumanBodyBones.RightUpperArm], HumanBodyBones.RightUpperArm);
             m_bone[HumanBodyBones.RightLowerArm] = FindBone(m_bone[HumanBodyBones.RightUpperArm], m_boneRegex[HumanBodyBones.RightLowerArm], HumanBodyBones.RightLowerArm);
             m_bone[HumanBodyBones.RightHand] = FindBone(m_bone[HumanBodyBones.RightLowerArm], m_boneRegex[HumanBodyBones.RightHand], HumanBodyBones.RightHand);
+
+            //Lzebul用指ボーン
+            Lzebul.GetFingers(m_bone);
 
             //Rushka用指ボーン
             Rushka.GetFingers(m_bone);

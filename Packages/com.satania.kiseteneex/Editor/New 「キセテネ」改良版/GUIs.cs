@@ -153,8 +153,10 @@ namespace Saturnian_NewKiseteneEx_Package
             {
                 if (m_bone[HumanBodyBones.LeftHand] != null)
                 {
-                    getLeftIndexies();
+                    Lzebul.GetLeftFingers(m_bone);
                     Shizuku.GetLeftFingers(m_bone);
+                    getLeftIndexies();
+
                 }
             }
 
@@ -194,8 +196,9 @@ namespace Saturnian_NewKiseteneEx_Package
             {
                 if (m_bone[HumanBodyBones.RightHand] != null)
                 {
-                    getRightIndexies();
+                    Lzebul.GetRightFingers(m_bone);
                     Shizuku.GetRightFingers(m_bone);
+                    getRightIndexies();
                 }
             }
             GUILayout.Space(5);

@@ -233,45 +233,45 @@ namespace Saturnian_NewKiseteneEx_Package
         /// 胸をペアレントでくっつける場合の処理
         /// </summary>
         /// <param name="bone">操作するボーン</param>
-        void SetBreastParentConstraint(Transform bone)
-        {
-            if (Breast_L == Breast_R)
-                return;
+        //void SetBreastParentConstraint(Transform bone)
+        //{
+        //    if (Breast_L == Breast_R)
+        //        return;
 
-            Transform AvatarBreastL = FindBone_FullMatch(bone, Breast_L_Regex);
-            if (AvatarBreastL != null)
-            {
-                var BreLComp = AvatarBreastL.GetComponent<VRCPhysBone>();
-                if (AvatarBreastL != null && BreLComp == null && AvatarBreastL.name != Breast_L.name)
-                {
-                    Transform outObj = null;
-                    getPhysBoneObj(AvatarBreastL.gameObject, ref outObj);
+        //    Transform AvatarBreastL = FindBone_FullMatch(bone, Breast_L_Regex);
+        //    if (AvatarBreastL != null)
+        //    {
+        //        var BreLComp = AvatarBreastL.GetComponent<VRCPhysBone>();
+        //        if (AvatarBreastL != null && BreLComp == null && AvatarBreastL.name != Breast_L.name)
+        //        {
+        //            Transform outObj = null;
+        //            getPhysBoneObj(AvatarBreastL.gameObject, ref outObj);
 
-                    if (outObj != null)
-                        AvatarBreastL = outObj.transform;
-                }
+        //            if (outObj != null)
+        //                AvatarBreastL = outObj.transform;
+        //        }
 
-                if (AvatarBreastL != null)
-                    SetParentConstraintForBreast(Breast_L, AvatarBreastL);
-            }
+        //        if (AvatarBreastL != null)
+        //            SetParentConstraintForBreast(Breast_L, AvatarBreastL);
+        //    }
 
-            Transform AvatarBreastR = FindBone_FullMatch(bone, Breast_R_Regex);
-            if (AvatarBreastR != null)
-            {
-                var BreRComp = AvatarBreastR.GetComponent<VRCPhysBone>();
-                if (AvatarBreastR != null && BreRComp == null && AvatarBreastR.name != Breast_R.name)
-                {
-                    Transform outObj = null;
-                    getPhysBoneObj(AvatarBreastR.gameObject, ref outObj);
+        //    Transform AvatarBreastR = FindBone_FullMatch(bone, Breast_R_Regex);
+        //    if (AvatarBreastR != null)
+        //    {
+        //        var BreRComp = AvatarBreastR.GetComponent<VRCPhysBone>();
+        //        if (AvatarBreastR != null && BreRComp == null && AvatarBreastR.name != Breast_R.name)
+        //        {
+        //            Transform outObj = null;
+        //            getPhysBoneObj(AvatarBreastR.gameObject, ref outObj);
 
-                    if (outObj != null)
-                        AvatarBreastR = outObj.transform;
-                }
+        //            if (outObj != null)
+        //                AvatarBreastR = outObj.transform;
+        //        }
 
-                if (AvatarBreastR != null)
-                    SetParentConstraintForBreast(Breast_R, AvatarBreastR);
-            }
-        }
+        //        if (AvatarBreastR != null)
+        //            SetParentConstraintForBreast(Breast_R, AvatarBreastR);
+        //    }
+        //}
 
         /// <summary>
         /// 
@@ -350,7 +350,7 @@ namespace Saturnian_NewKiseteneEx_Package
                 if (physbones[i].rootTransform == breast)
                 {
                     ret = physbones[i];
-                    Debug.Log(ret);
+                    //Debug.Log(ret);
                     return ret;
                 }
             }

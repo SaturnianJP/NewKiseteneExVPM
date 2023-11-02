@@ -5,6 +5,179 @@ using UnityEngine;
 
 namespace Saturnian_NewKiseteneEx_Package
 {
+    public static class Lzebul
+    {
+        public enum Joint
+        {
+            Proximal = 1,
+            Intermediate = 2,
+            Distal = 3,
+        }
+
+        public enum Hand
+        {
+            Left,
+            Right
+        }
+
+        public enum Finger
+        {
+            Index,
+            Middle,
+            Little,
+            Ring,
+            Thumb
+        }
+
+        public static string[] FingerStr = new string[]
+        {
+            "Index",
+            "Middle",
+            "Little",
+            "Ring",
+            "Thumb"
+        };
+
+        public static string[] HandStr = new string[]
+        {
+            "L",
+            "R"
+        };
+
+        public static string _breast_root = "breast.root";
+        public static string _breast_L = "Breast.001.L";
+        public static string _breast_R = "Breast.001.R";
+
+        public static void GetBreastBone(Transform chest)
+        {
+            if (chest == null)
+                return;
+
+            Transform root_breast = chest.Find(_breast_root);
+            if (root_breast == null)
+                return;
+
+            NewKiseteneEx.Breast_L = root_breast.Find(_breast_L);
+            NewKiseteneEx.Breast_R = root_breast.Find(_breast_R);
+        }
+
+        //F_Thumb.001.L
+
+        public static Transform GetFinger(Transform handbone, Finger finger, Joint joint, Hand hand)
+        {
+            if (handbone == null)
+                return null;
+
+            string str = $"F_{FingerStr[(int)finger]}.00{(int)joint}.{HandStr[(int)hand]}";
+            Transform bone = handbone.Find(str);
+
+            //Debug.Log(bone);
+            return bone;
+        }
+
+        public static void GetLeftFingers(Dictionary<HumanBodyBones, Transform> m_bone)
+        {
+            if (m_bone[HumanBodyBones.LeftThumbProximal] == null)
+                m_bone[HumanBodyBones.LeftThumbProximal] = GetFinger(m_bone[HumanBodyBones.LeftHand], Finger.Thumb, Joint.Proximal, Hand.Left);
+
+            if (m_bone[HumanBodyBones.LeftIndexProximal] == null)
+                m_bone[HumanBodyBones.LeftIndexProximal] = GetFinger(m_bone[HumanBodyBones.LeftHand], Finger.Index, Joint.Proximal, Hand.Left);
+
+            if (m_bone[HumanBodyBones.LeftMiddleProximal] == null)
+                m_bone[HumanBodyBones.LeftMiddleProximal] = GetFinger(m_bone[HumanBodyBones.LeftHand], Finger.Middle, Joint.Proximal, Hand.Left);
+
+            if (m_bone[HumanBodyBones.LeftRingProximal] == null)
+                m_bone[HumanBodyBones.LeftRingProximal] = GetFinger(m_bone[HumanBodyBones.LeftHand], Finger.Ring, Joint.Proximal, Hand.Left);
+
+            if (m_bone[HumanBodyBones.LeftLittleProximal] == null)
+                m_bone[HumanBodyBones.LeftLittleProximal] = GetFinger(m_bone[HumanBodyBones.LeftHand], Finger.Little, Joint.Proximal, Hand.Left);
+
+            if (m_bone[HumanBodyBones.LeftThumbIntermediate] == null)
+                m_bone[HumanBodyBones.LeftThumbIntermediate] = GetFinger(m_bone[HumanBodyBones.LeftThumbProximal], Finger.Thumb, Joint.Intermediate, Hand.Left);
+
+            if (m_bone[HumanBodyBones.LeftIndexIntermediate] == null)
+                m_bone[HumanBodyBones.LeftIndexIntermediate] = GetFinger(m_bone[HumanBodyBones.LeftIndexProximal], Finger.Index, Joint.Intermediate, Hand.Left);
+
+            if (m_bone[HumanBodyBones.LeftMiddleIntermediate] == null)
+                m_bone[HumanBodyBones.LeftMiddleIntermediate] = GetFinger(m_bone[HumanBodyBones.LeftMiddleProximal], Finger.Middle, Joint.Intermediate, Hand.Left);
+
+            if (m_bone[HumanBodyBones.LeftRingIntermediate] == null)
+                m_bone[HumanBodyBones.LeftRingIntermediate] = GetFinger(m_bone[HumanBodyBones.LeftRingProximal], Finger.Ring, Joint.Intermediate, Hand.Left);
+
+            if (m_bone[HumanBodyBones.LeftLittleIntermediate] == null)
+                m_bone[HumanBodyBones.LeftLittleIntermediate] = GetFinger(m_bone[HumanBodyBones.LeftLittleProximal], Finger.Little, Joint.Intermediate, Hand.Left);
+
+            if (m_bone[HumanBodyBones.LeftThumbDistal] == null)
+                m_bone[HumanBodyBones.LeftThumbDistal] = GetFinger(m_bone[HumanBodyBones.LeftThumbIntermediate], Finger.Thumb, Joint.Distal, Hand.Left);
+
+            if (m_bone[HumanBodyBones.LeftIndexDistal] == null)
+                m_bone[HumanBodyBones.LeftIndexDistal] = GetFinger(m_bone[HumanBodyBones.LeftIndexIntermediate], Finger.Index, Joint.Distal, Hand.Left);
+
+            if (m_bone[HumanBodyBones.LeftMiddleDistal] == null)
+                m_bone[HumanBodyBones.LeftMiddleDistal] = GetFinger(m_bone[HumanBodyBones.LeftMiddleIntermediate], Finger.Middle, Joint.Distal, Hand.Left);
+
+            if (m_bone[HumanBodyBones.LeftRingDistal] == null)
+                m_bone[HumanBodyBones.LeftRingDistal] = GetFinger(m_bone[HumanBodyBones.LeftRingIntermediate], Finger.Ring, Joint.Distal, Hand.Left);
+
+            if (m_bone[HumanBodyBones.LeftLittleDistal] == null)
+                m_bone[HumanBodyBones.LeftLittleDistal] = GetFinger(m_bone[HumanBodyBones.LeftLittleIntermediate], Finger.Little, Joint.Distal, Hand.Left);
+        }
+
+        public static void GetRightFingers(Dictionary<HumanBodyBones, Transform> m_bone)
+        {
+            if (m_bone[HumanBodyBones.RightThumbProximal] == null)
+                m_bone[HumanBodyBones.RightThumbProximal] = GetFinger(m_bone[HumanBodyBones.RightHand], Finger.Thumb, Joint.Proximal, Hand.Right);
+
+            if (m_bone[HumanBodyBones.RightIndexProximal] == null)
+                m_bone[HumanBodyBones.RightIndexProximal] = GetFinger(m_bone[HumanBodyBones.RightHand], Finger.Index, Joint.Proximal, Hand.Right);
+
+            if (m_bone[HumanBodyBones.RightMiddleProximal] == null)
+                m_bone[HumanBodyBones.RightMiddleProximal] = GetFinger(m_bone[HumanBodyBones.RightHand], Finger.Middle, Joint.Proximal, Hand.Right);
+
+            if (m_bone[HumanBodyBones.RightRingProximal] == null)
+                m_bone[HumanBodyBones.RightRingProximal] = GetFinger(m_bone[HumanBodyBones.RightHand], Finger.Ring, Joint.Proximal, Hand.Right);
+
+            if (m_bone[HumanBodyBones.RightLittleProximal] == null)
+                m_bone[HumanBodyBones.RightLittleProximal] = GetFinger(m_bone[HumanBodyBones.RightHand], Finger.Little, Joint.Proximal, Hand.Right);
+
+            if (m_bone[HumanBodyBones.RightThumbIntermediate] == null)
+                m_bone[HumanBodyBones.RightThumbIntermediate] = GetFinger(m_bone[HumanBodyBones.RightThumbProximal], Finger.Thumb, Joint.Intermediate, Hand.Right);
+
+            if (m_bone[HumanBodyBones.RightIndexIntermediate] == null)
+                m_bone[HumanBodyBones.RightIndexIntermediate] = GetFinger(m_bone[HumanBodyBones.RightIndexProximal], Finger.Index, Joint.Intermediate, Hand.Right);
+
+            if (m_bone[HumanBodyBones.RightMiddleIntermediate] == null)
+                m_bone[HumanBodyBones.RightMiddleIntermediate] = GetFinger(m_bone[HumanBodyBones.RightMiddleProximal], Finger.Middle, Joint.Intermediate, Hand.Right);
+
+            if (m_bone[HumanBodyBones.RightRingIntermediate] == null)
+                m_bone[HumanBodyBones.RightRingIntermediate] = GetFinger(m_bone[HumanBodyBones.RightRingProximal], Finger.Ring, Joint.Intermediate, Hand.Right);
+
+            if (m_bone[HumanBodyBones.RightLittleIntermediate] == null)
+                m_bone[HumanBodyBones.RightLittleIntermediate] = GetFinger(m_bone[HumanBodyBones.RightLittleProximal], Finger.Little, Joint.Intermediate, Hand.Right);
+
+            if (m_bone[HumanBodyBones.RightThumbDistal] == null)
+                m_bone[HumanBodyBones.RightThumbDistal] = GetFinger(m_bone[HumanBodyBones.RightThumbIntermediate], Finger.Thumb, Joint.Distal, Hand.Right);
+
+            if (m_bone[HumanBodyBones.RightIndexDistal] == null)
+                m_bone[HumanBodyBones.RightIndexDistal] = GetFinger(m_bone[HumanBodyBones.RightIndexIntermediate], Finger.Index, Joint.Distal, Hand.Right);
+
+            if (m_bone[HumanBodyBones.RightMiddleDistal] == null)
+                m_bone[HumanBodyBones.RightMiddleDistal] = GetFinger(m_bone[HumanBodyBones.RightMiddleIntermediate], Finger.Middle, Joint.Distal, Hand.Right);
+
+            if (m_bone[HumanBodyBones.RightRingDistal] == null)
+                m_bone[HumanBodyBones.RightRingDistal] = GetFinger(m_bone[HumanBodyBones.RightRingIntermediate], Finger.Ring, Joint.Distal, Hand.Right);
+
+            if (m_bone[HumanBodyBones.RightLittleDistal] == null)
+                m_bone[HumanBodyBones.RightLittleDistal] = GetFinger(m_bone[HumanBodyBones.RightLittleIntermediate], Finger.Little, Joint.Distal, Hand.Right);
+        }
+
+        public static void GetFingers(Dictionary<HumanBodyBones, Transform> m_bone)
+        {
+            GetLeftFingers(m_bone);
+            GetRightFingers(m_bone);
+        }
+    }
+
     public static class Kuronatu
     {
         /// <summary>
@@ -735,7 +908,7 @@ namespace Saturnian_NewKiseteneEx_Package
         ///Breast_2_L
         ///Butt_L
         /// </summary>
-        string Breast_L_Regex = "(?:B(?:reast(?:_(?:[Rr]oot[._]|[12]_)?|\\.)L|u(?:stDynamicBone\\.L\\.001|tt_L))|b(?:oob(?:_w\\.001_L\\.00[123]|s\\.L)|(?:ust\\.001\\.|reast[._])L))";
+        //string Breast_L_Regex = "(?:B(?:reast(?:_(?:[Rr]oot[._]|[12]_)?|\\.)L|u(?:stDynamicBone\\.L\\.001|tt_L))|b(?:oob(?:_w\\.001_L\\.00[123]|s\\.L)|(?:ust\\.001\\.|reast[._])L))";
 
         /*
 Breast_root.R
@@ -755,7 +928,7 @@ Breast_1_R
 Breast_2_R
 Butt_R
 */
-        string Breast_R_Regex = "(?:B(?:reast(?:_(?:(?:root[._]|[12]_)R|R(?:oot[._]R)?)|\\.R)|u(?:stDynamicBone\\.R\\.001|tt_R))|b(?:oob(?:_w\\.001_R\\.00[123]|s\\.R)|(?:ust\\.001\\.|reast_)R))";
+        //string Breast_R_Regex = "(?:B(?:reast(?:_(?:(?:root[._]|[12]_)R|R(?:oot[._]R)?)|\\.R)|u(?:stDynamicBone\\.R\\.001|tt_R))|b(?:oob(?:_w\\.001_R\\.00[123]|s\\.R)|(?:ust\\.001\\.|reast_)R))";
 
         string Lung_L_Regex = "hai.L";
         string Lung_Upper_L_Regex = "munemoto.L";
