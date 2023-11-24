@@ -144,15 +144,19 @@ namespace Saturnian_NewKiseteneEx_Package
             m_bone[HumanBodyBones.Neck] = FindBone(chest, m_boneRegex[HumanBodyBones.Neck], HumanBodyBones.Neck, Neck_NegativeRegex);
             m_bone[HumanBodyBones.Head] = FindBone(m_bone[HumanBodyBones.Neck], m_boneRegex[HumanBodyBones.Head], HumanBodyBones.Head);
 
-            //肩 左
+            //肩 左 補完用
+            m_bone[HumanBodyBones.LeftShoulder] = FindBone(chest, LeftShoulder_Regex, HumanBodyBones.LeftShoulder);
             m_bone[HumanBodyBones.LeftShoulder] = FindBone_LeftRight(chest, m_boneRegex[HumanBodyBones.LeftShoulder], false, HumanBodyBones.LeftShoulder);
+
             m_bone[HumanBodyBones.LeftUpperArm] = FindBone(m_bone[HumanBodyBones.LeftShoulder], m_boneRegex[HumanBodyBones.LeftUpperArm], HumanBodyBones.LeftUpperArm);
 
             m_bone[HumanBodyBones.LeftLowerArm] = FindBone(m_bone[HumanBodyBones.LeftUpperArm], m_boneRegex[HumanBodyBones.LeftLowerArm], HumanBodyBones.LeftLowerArm);
             m_bone[HumanBodyBones.LeftHand] = FindBone(m_bone[HumanBodyBones.LeftLowerArm], m_boneRegex[HumanBodyBones.LeftHand], HumanBodyBones.LeftHand);
 
-            //右腕
+            //右腕 補完用
+            m_bone[HumanBodyBones.RightShoulder] = FindBone(chest, RightShoulder_Regex, HumanBodyBones.RightShoulder);
             m_bone[HumanBodyBones.RightShoulder] = FindBone_LeftRight(chest, m_boneRegex[HumanBodyBones.RightShoulder], true, HumanBodyBones.RightShoulder);
+
             m_bone[HumanBodyBones.RightUpperArm] = FindBone(m_bone[HumanBodyBones.RightShoulder], m_boneRegex[HumanBodyBones.RightUpperArm], HumanBodyBones.RightUpperArm);
             m_bone[HumanBodyBones.RightLowerArm] = FindBone(m_bone[HumanBodyBones.RightUpperArm], m_boneRegex[HumanBodyBones.RightLowerArm], HumanBodyBones.RightLowerArm);
             m_bone[HumanBodyBones.RightHand] = FindBone(m_bone[HumanBodyBones.RightLowerArm], m_boneRegex[HumanBodyBones.RightHand], HumanBodyBones.RightHand);

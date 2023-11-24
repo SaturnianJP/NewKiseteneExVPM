@@ -1123,6 +1123,16 @@ R_ThumbFinger
 
         string Neck_NegativeRegex = "_necklace";
 
+        /// <summary>
+        /// Left shoulder
+        /// </summary>
+        string LeftShoulder_Regex = "Left shoulder";
+
+        /// <summary>
+        /// Right shoulder
+        /// </summary>
+        string RightShoulder_Regex = "Right shoulder";
+
         Dictionary<HumanBodyBones, string> m_boneRegex = new Dictionary<HumanBodyBones, string>()
         {
             { HumanBodyBones.Hips, "hip|pelvis|bone_pelvis" },
@@ -1136,12 +1146,24 @@ Upperchest
             { HumanBodyBones.UpperChest, "(?:upper(?:chest)?|Upperchest)" },
             { HumanBodyBones.Chest, "chest|bone_spine02" },
 
-            { HumanBodyBones.LeftShoulder, "_Shoulder|shoulder|Sholder" },
+/*
+_Shoulder
+shoulder
+Shoulder
+Left Shoulder
+            */
+            { HumanBodyBones.LeftShoulder, "_Shoulder|shoulder|Shoulder" },
             { HumanBodyBones.LeftUpperArm, "upper|arm|Arm" },
             { HumanBodyBones.LeftLowerArm,  "lower|elbow|ForeArm" },
             { HumanBodyBones.LeftHand, "hand|wrist|Hand" },
 
-            { HumanBodyBones.RightShoulder, "_Shoulder|shoulder|Sholder" },
+/*
+_Shoulder
+shoulder
+Shoulder
+Right Shoulder
+*/
+            { HumanBodyBones.RightShoulder, "_Shoulder|shoulder|Shoulder" },
             { HumanBodyBones.RightUpperArm, "upper|arm|Arm" },
             { HumanBodyBones.RightLowerArm,  "lower|elbow|ForeArm" },
             { HumanBodyBones.RightHand, "hand|wrist|Hand" },

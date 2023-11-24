@@ -131,6 +131,8 @@ namespace Saturnian_NewKiseteneEx_Package
 
             //複製後のオブジェクトをアクティブ化
             m_AvatarInstance.gameObject.SetActive(true);
+            m_cloth = null;
+            m_Avatar = null;
         }
 
         void getPhysBoneObj(GameObject Object, ref Transform outObj)
