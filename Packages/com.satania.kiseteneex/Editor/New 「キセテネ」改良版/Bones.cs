@@ -146,7 +146,9 @@ namespace Saturnian_NewKiseteneEx_Package
 
             //肩 左 補完用
             m_bone[HumanBodyBones.LeftShoulder] = FindBone(chest, LeftShoulder_Regex, HumanBodyBones.LeftShoulder);
-            m_bone[HumanBodyBones.LeftShoulder] = FindBone_LeftRight(chest, m_boneRegex[HumanBodyBones.LeftShoulder], false, HumanBodyBones.LeftShoulder);
+
+            if (m_bone[HumanBodyBones.LeftShoulder] == null)
+                m_bone[HumanBodyBones.LeftShoulder] = FindBone_LeftRight(chest, m_boneRegex[HumanBodyBones.LeftShoulder], false, HumanBodyBones.LeftShoulder, RegexOptions.IgnoreCase, "ribbon");
 
             m_bone[HumanBodyBones.LeftUpperArm] = FindBone(m_bone[HumanBodyBones.LeftShoulder], m_boneRegex[HumanBodyBones.LeftUpperArm], HumanBodyBones.LeftUpperArm);
 
@@ -155,7 +157,9 @@ namespace Saturnian_NewKiseteneEx_Package
 
             //右腕 補完用
             m_bone[HumanBodyBones.RightShoulder] = FindBone(chest, RightShoulder_Regex, HumanBodyBones.RightShoulder);
-            m_bone[HumanBodyBones.RightShoulder] = FindBone_LeftRight(chest, m_boneRegex[HumanBodyBones.RightShoulder], true, HumanBodyBones.RightShoulder);
+
+            if (m_bone[HumanBodyBones.RightShoulder] == null)
+                m_bone[HumanBodyBones.RightShoulder] = FindBone_LeftRight(chest, m_boneRegex[HumanBodyBones.RightShoulder], true, HumanBodyBones.RightShoulder, RegexOptions.IgnoreCase, "ribbon");
 
             m_bone[HumanBodyBones.RightUpperArm] = FindBone(m_bone[HumanBodyBones.RightShoulder], m_boneRegex[HumanBodyBones.RightUpperArm], HumanBodyBones.RightUpperArm);
             m_bone[HumanBodyBones.RightLowerArm] = FindBone(m_bone[HumanBodyBones.RightUpperArm], m_boneRegex[HumanBodyBones.RightLowerArm], HumanBodyBones.RightLowerArm);
@@ -409,7 +413,7 @@ namespace Saturnian_NewKiseteneEx_Package
         /// <param name="parent"></param>
         /// <param name="matchPattern"></param>
         /// <returns></returns>
-        Transform FindBone(Transform parent, string matchPattern, HumanBodyBones bone)
+        Transform FindBone(Transform parent, string matchPattern, HumanBodyBones bone, RegexOptions regexOption = RegexOptions.IgnoreCase)
         {
             if (bone != (HumanBodyBones)(-1) && m_bone[bone] != null)
                 return m_bone[bone];
@@ -419,7 +423,7 @@ namespace Saturnian_NewKiseteneEx_Package
 
             foreach (Transform child in parent)
             {
-                if (Regex.IsMatch(child.name, matchPattern, RegexOptions.IgnoreCase))
+                if (Regex.IsMatch(child.name, matchPattern, regexOption))
                     return child;
             }
             return null;
@@ -502,6 +506,60 @@ namespace Saturnian_NewKiseteneEx_Package
                         hit1 = child;
                     else
                         hit2 = child;
+                }
+            }
+
+            if (hit1 == null || hit2 == null)
+                return null;
+
+            if (right)
+            {
+                if (hit1.position.x > hit2.position.x)
+                    return hit1;
+                else
+                    return hit2;
+            }
+            else if (!right)
+            {
+                if (hit1.position.x < hit2.position.x)
+                    return hit1;
+                else
+                    return hit2;
+            }
+
+            return null;
+        }
+
+        Transform FindBone_LeftRight(Transform parent, string matchPattern, bool right, HumanBodyBones bone, RegexOptions option = RegexOptions.IgnoreCase, string dontmatchpattern = "")
+        {
+            if (bone != (HumanBodyBones)(-1) && m_bone[bone] != null)
+                return m_bone[bone];
+
+            if (parent == null)
+                return null;
+
+            Transform hit1 = null;
+            Transform hit2 = null;
+
+            foreach (Transform child in parent)
+            {
+                if (Regex.IsMatch(child.name, matchPattern, option))
+                {
+                    bool isMatched = false;
+
+                    if (string.IsNullOrWhiteSpace(dontmatchpattern))
+                        isMatched = true;
+
+                    if (!Regex.IsMatch(child.name, dontmatchpattern, RegexOptions.IgnoreCase))
+                        isMatched = true;
+
+                    if (isMatched)
+                    {
+                        if (hit1 == null)
+                            hit1 = child;
+                        else
+                            hit2 = child;
+                    }
                 }
             }
 
