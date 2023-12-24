@@ -1173,6 +1173,7 @@ Right Shoulder
             /*
 bone_upleg_L
 UpperLeg_L
+Upperleg_L
 Left leg
 upper_leg_L
 Upper_leg.L
@@ -1195,7 +1196,7 @@ upper_leg_L
 LeftUpLeg
 upper_leg.L
             */
-            { HumanBodyBones.LeftUpperLeg, "(?:upper(?:_(?:leg(?:.[Ll]|_[Ll])|Leg(?:.l|_L))| (?:leg.[Ll]|Leg.l))|Upper(?:(?:_(?:Leg[._]|leg.)|Leg[._])L| Leg.[Ll])|Left(?:(?:Up(?:per)?|_Up)L| (?:Upper L|l))eg|bone_upleg_L)" },
+            { HumanBodyBones.LeftUpperLeg, "(?:upper(?:_(?:leg(?:.[Ll]|_[Ll])|Leg(?:.l|_L))| (?:leg.[Ll]|Leg.l))|Upper(?:(?:_(?:Leg[._]|leg.)|Leg[._]|leg_)L| Leg.[Ll])|Left(?:(?:Up(?:per)?|_Up)L| (?:Upper L|l))eg|bone_upleg_L)" },
 
 
             /*
@@ -1278,6 +1279,7 @@ LeftToeBase
             /*
 bone_upleg_R
 UpperLeg_R
+Upperleg_R
 Right leg
 upper_leg_R
 Upper_leg.R
@@ -1302,7 +1304,7 @@ upper_leg_R
 RightUpLeg
 upper_leg.R
             */
-            { HumanBodyBones.RightUpperLeg, "(?:upper(?:_(?:leg(?:.[Rr]|_[Rr])|Leg(?:.r|_R))| (?:leg.[Rr]|Leg.r)|leg.[Rr])|Upper(?:(?:_(?:Leg[._]|leg.)|Leg[._])R| Leg.[Rr])|Right(?:(?:Up(?:per)?|_Up)L| (?:Upper L|l))eg|bone_upleg_R)" },
+            { HumanBodyBones.RightUpperLeg, "(?:upper(?:_(?:leg(?:.[Rr]|_[Rr])|Leg(?:.r|_R))| (?:leg.[Rr]|Leg.r)|leg.[Rr])|Upper(?:(?:_(?:Leg[._]|leg.)|Leg[._]|leg_)R| Leg.[Rr])|Right(?:(?:Up(?:per)?|_Up)L| (?:Upper L|l))eg|bone_upleg_R)" },
 
 
             /*
