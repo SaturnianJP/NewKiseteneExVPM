@@ -940,6 +940,8 @@ Butt_R
 
 
         /*
+breast.root_L
+breast.root_R
 Breast_root.R
 Breast_root_R
 Breast_R
@@ -1002,7 +1004,7 @@ Breast_2.L
 bone_breast01_L
 bone_breast03_L
         */
-        string Breast_Regex = "(?:B(?:reast(?:_(?:R(?:oot(?:.[LR]|_[LR])|.001)?|root(?:.[LR]|_[LR])|1(?:.[LR]|_[LR])|2(?:.[LR]|_[LR])|L(?:.001)?)|.[LR])|u(?:stDynamicBone.[LR].001|tt_[LR]))|b(?:o(?:ob(?:_w.001_(?:L.00[123]|R.00[123])|s.[LR])|ne_breast0(?:1_[LR]|3_[LR]))|reast(?:_(?:L(?:.001)?|R(?:.001)?|[lr].001)|.[LR])|ust.001.[LR])|Right(?: Breast(?:2(?:_end)?|1)|_Bust(?:End|2)?|Breast_0[12])|Left(?: Breast(?:2(?:_end)?|1)|_Bust(?:End|2)?|Breast_0[12]))";
+        string Breast_Regex = "(?:b(?:o(?:ob(?:_w.001_(?:L.00[123]|R.00[123])|s.[LR])|ne_breast0(?:1_[LR]|3_[LR]))|reast(?:_(?:L(?:.001)?|R(?:.001)?|[lr].001)|.(?:[LR]|root_[LR]))|ust.001.[LR])|B(?:reast(?:_(?:R(?:oot(?:.[LR]|_[LR])|.001)?|root(?:.[LR]|_[LR])|1(?:.[LR]|_[LR])|2(?:.[LR]|_[LR])|L(?:.001)?)|.[LR])|u(?:stDynamicBone.[LR].001|tt_[LR]))|Right(?: Breast(?:2(?:_end)?|1)|_Bust(?:End|2)?)|Left(?: Breast(?:2(?:_end)?|1)|_Bust(?:End|2)?))";
 /*      
 Hips_L
 Hips.L
@@ -1154,7 +1156,16 @@ Left Shoulder
             */
             { HumanBodyBones.LeftShoulder, "_Shoulder|shoulder|Shoulder" },
             { HumanBodyBones.LeftUpperArm, "upper|arm|Arm" },
-            { HumanBodyBones.LeftLowerArm,  "lower|elbow|ForeArm" },
+/*
+lower_arm.L
+Lower_arm.L
+Lower Arm.L
+LowerArm.L
+LowerArm_L
+Lower_Arm_L
+Left elbow
+*/
+            { HumanBodyBones.LeftLowerArm,  "(?:L(?:ower(?:_(?:arm.|Arm_)|Arm[._]| Arm.)L|eft elbow)|lower_arm.L)" },
             { HumanBodyBones.LeftHand, "hand|wrist|Hand" },
 
 /*
@@ -1165,7 +1176,17 @@ Right Shoulder
 */
             { HumanBodyBones.RightShoulder, "_Shoulder|shoulder|Shoulder" },
             { HumanBodyBones.RightUpperArm, "upper|arm|Arm" },
-            { HumanBodyBones.RightLowerArm,  "lower|elbow|ForeArm" },
+
+/*
+lower_arm.R
+Lower_arm.R
+Lower Arm.R
+LowerArm.R
+LowerArm_R
+Lower_Arm_R
+Right elbow
+*/
+            { HumanBodyBones.RightLowerArm,  "(?:(?:Lower(?:_(?:arm.|Arm_)|Arm[._]| Arm.)|lower_arm.)R|Right elbow)" },
             { HumanBodyBones.RightHand, "hand|wrist|Hand" },
 
             { HumanBodyBones.Neck, "neck|bone_neck" },
