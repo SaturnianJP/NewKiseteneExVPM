@@ -216,6 +216,8 @@ namespace Saturnian_NewKiseteneEx_Package
                 Kuronatu.ThingsL = FindBone_FullMatch(m_bone[HumanBodyBones.LeftUpperLeg], Kuronatu.Thighs_L);
                 if (Kuronatu.ThingsL != null)
                     Kuronatu.ThingsL_001 = FindBone_FullMatch(Kuronatu.ThingsL, Kuronatu.Thighs_L_001);
+
+                Mizuki.knee_L = FindBone_FullMatch(m_bone[HumanBodyBones.LeftUpperLeg], Mizuki.knees_L);
             }
 
             m_bone[HumanBodyBones.LeftLowerLeg] = FindBone(m_bone[HumanBodyBones.LeftUpperLeg], m_boneRegex[HumanBodyBones.LeftLowerLeg], HumanBodyBones.LeftLowerLeg);
@@ -231,6 +233,8 @@ namespace Saturnian_NewKiseteneEx_Package
                 Kuronatu.ThingsR = FindBone_FullMatch(m_bone[HumanBodyBones.RightUpperLeg], Kuronatu.Thighs_R);
                 if (Kuronatu.ThingsR != null)
                     Kuronatu.ThingsR_001 = FindBone_FullMatch(Kuronatu.ThingsR, Kuronatu.Thighs_R_001);
+
+                Mizuki.knee_R = FindBone_FullMatch(m_bone[HumanBodyBones.RightUpperLeg], Mizuki.knees_R);
             }
 
             m_bone[HumanBodyBones.RightLowerLeg] = FindBone(m_bone[HumanBodyBones.RightUpperLeg], m_boneRegex[HumanBodyBones.RightLowerLeg], HumanBodyBones.RightLowerLeg);

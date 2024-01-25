@@ -882,6 +882,16 @@ namespace Saturnian_NewKiseteneEx_Package
         }
     }
 
+    public static class Mizuki
+    {
+        public static Transform knee_L;
+        public static Transform knee_R;
+
+        public static string knees_L = "knees_L";
+        public static string knees_R = "knees_R";
+
+    }
+
     public partial class NewKiseteneEx
     {
         static string armature_regex = "Armature|armature|root|skelton|Armature.001|Armature.002|Armature.003|Biped|Ash|Ciel Root|bone_root";
@@ -1164,8 +1174,10 @@ LowerArm.L
 LowerArm_L
 Lower_Arm_L
 Left elbow
+Left Lower Arm
+LeftLowerArm
 */
-            { HumanBodyBones.LeftLowerArm,  "(?:L(?:ower(?:_(?:arm.|Arm_)|Arm[._]| Arm.)L|eft elbow)|lower_arm.L)" },
+            { HumanBodyBones.LeftLowerArm,  "(?:L(?:ower(?:_(?:arm.|Arm_)|Arm[._]| Arm.)L|eft(?: (?:Lower Arm|elbow)|LowerArm))|lower_arm.L)" },
             { HumanBodyBones.LeftHand, "hand|wrist|Hand" },
 
 /*
@@ -1185,8 +1197,10 @@ LowerArm.R
 LowerArm_R
 Lower_Arm_R
 Right elbow
+Right Lower Arm
+RightLowerArm
 */
-            { HumanBodyBones.RightLowerArm,  "(?:(?:Lower(?:_(?:arm.|Arm_)|Arm[._]| Arm.)|lower_arm.)R|Right elbow)" },
+            { HumanBodyBones.RightLowerArm,  "(?:(?:Lower(?:_(?:arm.|Arm_)|Arm[._]| Arm.)|lower_arm.)R|Right(?: (?:Lower Arm|elbow)|LowerArm))" },
             { HumanBodyBones.RightHand, "hand|wrist|Hand" },
 
             { HumanBodyBones.Neck, "neck|bone_neck" },

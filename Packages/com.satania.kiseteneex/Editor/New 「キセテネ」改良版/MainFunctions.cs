@@ -585,6 +585,15 @@ namespace Saturnian_NewKiseteneEx_Package
                             }
                         }
                     }
+
+                    if (Mizuki.knee_L != null)
+                    {
+                        var kneesL = FindBone_FullMatch(p, Mizuki.knees_L);
+                        if (kneesL != null)
+                        {
+                            Mizuki.knee_L.SetParent(kneesL);
+                        }
+                    }
                 }
 
                 if (i == (int)HumanBodyBones.RightUpperLeg)
@@ -600,6 +609,15 @@ namespace Saturnian_NewKiseteneEx_Package
                             {
                                 Kuronatu.ThingsR_001.SetParent(avatar_thing_R_001);
                             }
+                        }
+                    }
+
+                    if (Mizuki.knee_R != null)
+                    {
+                        var kneesR = FindBone_FullMatch(p, Mizuki.knees_R);
+                        if (kneesR != null)
+                        {
+                            Mizuki.knee_R.SetParent(kneesR);
                         }
                     }
                 }

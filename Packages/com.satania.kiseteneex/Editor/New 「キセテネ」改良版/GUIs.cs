@@ -291,6 +291,11 @@ namespace Saturnian_NewKiseteneEx_Package
             Shizuku.bonewlbowL = EditorGUILayout.ObjectField(Shizuku.bone_elbow_L, Shizuku.bonewlbowL, typeof(Transform), true) as Transform;
             Shizuku.boneelbowR = EditorGUILayout.ObjectField(Shizuku.bone_elbow_R, Shizuku.boneelbowR, typeof(Transform), true) as Transform;
 
+            GUILayout.Space(5);
+            drawSizeLabel("[Mizuki] 補助ボーン", 15);
+            Mizuki.knee_L = EditorGUILayout.ObjectField(Mizuki.knees_L, Mizuki.knee_L, typeof(Transform), true) as Transform;
+            Mizuki.knee_R = EditorGUILayout.ObjectField(Mizuki.knees_R, Mizuki.knee_R, typeof(Transform), true) as Transform;
+
             //Darjelling
             EditorGUILayout.EndScrollView();
             EditorGUILayout.HelpBox(Localized.bonesetting_warinig, MessageType.Warning, true);
