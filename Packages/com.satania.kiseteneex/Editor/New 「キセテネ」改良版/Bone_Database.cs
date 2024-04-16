@@ -1138,12 +1138,12 @@ R_ThumbFinger
         /// <summary>
         /// Left shoulder
         /// </summary>
-        string LeftShoulder_Regex = "Left shoulder";
+        string LeftShoulder_Regex = "Left shoulder|Shoulder_L|Shoulder.l";
 
         /// <summary>
         /// Right shoulder
         /// </summary>
-        string RightShoulder_Regex = "Right shoulder";
+        string RightShoulder_Regex = "Right shoulder|Shoulder_R|Shoulder.R";
 
         Dictionary<HumanBodyBones, string> m_boneRegex = new Dictionary<HumanBodyBones, string>()
         {

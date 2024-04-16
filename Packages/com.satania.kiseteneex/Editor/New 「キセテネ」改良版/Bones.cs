@@ -148,7 +148,7 @@ namespace Saturnian_NewKiseteneEx_Package
             m_bone[HumanBodyBones.LeftShoulder] = FindBone(chest, LeftShoulder_Regex, HumanBodyBones.LeftShoulder);
 
             if (m_bone[HumanBodyBones.LeftShoulder] == null)
-                m_bone[HumanBodyBones.LeftShoulder] = FindBone_LeftRight(chest, m_boneRegex[HumanBodyBones.LeftShoulder], false, HumanBodyBones.LeftShoulder, RegexOptions.IgnoreCase, "ribbon");
+                m_bone[HumanBodyBones.LeftShoulder] = FindBone_LeftRight(chest, m_boneRegex[HumanBodyBones.LeftShoulder], false, HumanBodyBones.LeftShoulder, RegexOptions.IgnoreCase, "ribbon|CapeRoot");
 
             m_bone[HumanBodyBones.LeftUpperArm] = FindBone(m_bone[HumanBodyBones.LeftShoulder], m_boneRegex[HumanBodyBones.LeftUpperArm], HumanBodyBones.LeftUpperArm);
 
@@ -159,7 +159,7 @@ namespace Saturnian_NewKiseteneEx_Package
             m_bone[HumanBodyBones.RightShoulder] = FindBone(chest, RightShoulder_Regex, HumanBodyBones.RightShoulder);
 
             if (m_bone[HumanBodyBones.RightShoulder] == null)
-                m_bone[HumanBodyBones.RightShoulder] = FindBone_LeftRight(chest, m_boneRegex[HumanBodyBones.RightShoulder], true, HumanBodyBones.RightShoulder, RegexOptions.IgnoreCase, "ribbon");
+                m_bone[HumanBodyBones.RightShoulder] = FindBone_LeftRight(chest, m_boneRegex[HumanBodyBones.RightShoulder], true, HumanBodyBones.RightShoulder, RegexOptions.IgnoreCase, "ribbon|CapeRoot");
 
             m_bone[HumanBodyBones.RightUpperArm] = FindBone(m_bone[HumanBodyBones.RightShoulder], m_boneRegex[HumanBodyBones.RightUpperArm], HumanBodyBones.RightUpperArm);
             m_bone[HumanBodyBones.RightLowerArm] = FindBone(m_bone[HumanBodyBones.RightUpperArm], m_boneRegex[HumanBodyBones.RightLowerArm], HumanBodyBones.RightLowerArm);
