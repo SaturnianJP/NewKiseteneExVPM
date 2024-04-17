@@ -982,6 +982,9 @@ Breast_1.R
 Breast_2.R
 bone_breast01_R
 bone_breast03_R
+Breast.1_R
+Breast.2_R
+Breast.1_R.001
 
 Breast_root.L
 Breast_root_L
@@ -1013,8 +1016,11 @@ Breast_1.L
 Breast_2.L
 bone_breast01_L
 bone_breast03_L
+Breast.1_L
+Breast.2_L
+Breast.1_L.001
         */
-        string Breast_Regex = "(?:b(?:o(?:ob(?:_w.001_(?:L.00[123]|R.00[123])|s.[LR])|ne_breast0(?:1_[LR]|3_[LR]))|reast(?:_(?:L(?:.001)?|R(?:.001)?|[lr].001)|.(?:[LR]|root_[LR]))|ust.001.[LR])|B(?:reast(?:_(?:R(?:oot(?:.[LR]|_[LR])|.001)?|root(?:.[LR]|_[LR])|1(?:.[LR]|_[LR])|2(?:.[LR]|_[LR])|L(?:.001)?)|.[LR])|u(?:stDynamicBone.[LR].001|tt_[LR]))|Right(?: Breast(?:2(?:_end)?|1)|_Bust(?:End|2)?)|Left(?: Breast(?:2(?:_end)?|1)|_Bust(?:End|2)?))";
+        string Breast_Regex = "(?:B(?:reast(?:_(?:R(?:oot(?:.[LR]|_[LR])|.001)?|root(?:.[LR]|_[LR])|1(?:.[LR]|_[LR])|2(?:.[LR]|_[LR])|L(?:.001)?)|.(?:[LR]|1_(?:L(?:.001)?|R(?:.001)?)|2_[LR]))|u(?:stDynamicBone.[LR].001|tt_[LR]))|b(?:o(?:ob(?:_w.001_(?:L.00[123]|R.00[123])|s.[LR])|ne_breast0(?:1_[LR]|3_[LR]))|reast(?:_(?:L(?:.001)?|R(?:.001)?|[lr].001)|.(?:[LR]|root_[LR]))|ust.001.[LR])|Right(?: Breast(?:2(?:_end)?|1)|_Bust(?:End|2)?)|Left(?: Breast(?:2(?:_end)?|1)|_Bust(?:End|2)?))";
 /*      
 Hips_L
 Hips.L
