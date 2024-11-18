@@ -61,16 +61,27 @@ namespace Saturnian_NewKiseteneEx_Package
         /// </summary>
         public static string[] files = { "jp", "kr", "en", "ch", "ch2" };
 
+        public static string[] guids = new string[]
+        {
+            "5ba04412443076041b104348d30a26c6",
+            "4416817ae9e309746a6e556d4e13f79e",
+            "27917cd9fea316e4192fa4ec4907092d",
+            "6fa3a86895b68124d9adde34f52fe7b1",
+            "c5c37f3fa0723b64986d84ac9fd66006",
+        };
+
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
         public static Kisetene_localize LoadLocalizeFile(int index)
         {
-            string filename = $"{LocalizePath}{files[index]}.json";
-            if (!File.Exists(filename))
+            string assetPath = AssetDatabase.GUIDToAssetPath(guids[index]);
+
+            //string filename = $"{LocalizePath}{files[index]}.json";
+            if (!File.Exists(assetPath))
                 return new Kisetene_localize();
 
-            string jsonText = File.ReadAllText(filename);
+            string jsonText = File.ReadAllText(assetPath);
             var FromJson = JsonUtility.FromJson<Kisetene_localize>(jsonText);
 
             if (FromJson == null)
