@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using VRC.SDKBase;
 
 namespace sataniashoping.component.kisetenecomponent_package

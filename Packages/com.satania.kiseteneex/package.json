@@ -1,7 +1,7 @@
 {
   "name": "com.satania.kiseteneex",
   "displayName": "New Kisetene Ex",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "description": "edited Kisetene",
   "gitDependencies": {},
   "vpmDependencies": {
@@ -9,7 +9,7 @@
   },
   "author": {
     "name": "satania",
-    "email": "saturnianbooth@gmail.com",
+    "email": "osigoto@satania.net",
     "url": "https://saturnianshop.booth.pm/"
   },
   "legacyFolders": {},
